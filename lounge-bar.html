@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power-Up Bar Menu</title>
+
+  <!-- SEO -->
+  <meta name="description" content="RETRO ARENA - La prima sala giochi vintage a Bari. PlayStation 1, cabinati arcade, tornei e cocktail a tema anni 90. Prenota ora!">
+  <meta name="keywords" content="sala giochi bari, retrogaming, arcade bari, playstation 1, cabinati, lounge bar gaming, tornei videogiochi">
+  <meta name="author" content="RETRO ARENA">
+
+  <!-- Open Graph (Social) -->
+  <meta property="og:title" content="RETRO ARENA - Sala Giochi Vintage Bari">
+  <meta property="og:description" content="La tua sala giochi anni '90 a Bari. PS1, arcade, tornei e cocktail retro!">
+  <meta property="og:image" content="https://tuosito.it/images/og-image.jpg">
+  <meta property="og:url" content="https://tuosito.it">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RETRO ARENA - Sala Giochi Vintage">
+  <meta name="twitter:description" content="Retrogaming a Bari! PS1, arcade e lounge bar.">
+  <meta name="twitter:image" content="https://tuosito.it/images/twitter-card.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'TUO_GA_ID');
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="menu-page">
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="cookie-banner hidden">
+  <div class="cookie-content">
+    <div class="cookie-header">
+      <span class="cookie-icon">🍪</span>
+      <h3>PRESS START TO ACCEPT COOKIES</h3>
+    </div>
+    <p class="cookie-text">
+      Questo sito usa cookie tecnici e di terze parti per migliorare la tua esperienza.
+      Continuando la navigazione accetti l'uso dei cookie secondo la nostra
+      <a href="privacy-policy.html">Privacy Policy</a>.
+    </p>
+    <div class="cookie-buttons">
+      <button id="cookie-accept-all" class="cookie-btn btn-accept">
+        ✓ ACCETTA TUTTI
+      </button>
+      <button id="cookie-accept-necessary" class="cookie-btn btn-necessary">
+        ⚙️ SOLO NECESSARI
+      </button>
+      <button id="cookie-settings" class="cookie-btn btn-settings">
+        🔧 PERSONALIZZA
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL IMPOSTAZIONI COOKIE -->
+<div id="cookie-modal" class="cookie-modal hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>⚙️ IMPOSTAZIONI COOKIE</h2>
+      <button id="modal-close" class="modal-close">✕</button>
+    </div>
+    <div class="modal-body">
+
+      <!-- Cookie Necessari -->
+      <div class="cookie-category">
+        <div class="category-header">
+          <label class="switch disabled">
+            <input type="checkbox" checked disabled>
+            <span class="slider"></span>
+          </label>
+          <div>
+            <h4>🔒 Cookie Necessari</h4>
+            <p>Essenziali per il funzionamento del sito. Non possono essere disabilitati.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cookie Analitici -->
+      <div class="cookie-category">
+        <div class="category-header">
+          <label class="switch">
+            <input type="checkbox" id="cookie-analytics">
+            <span class="slider"></span>
+          </label>
+          <div>
+            <h4>📊 Cookie Analitici</h4>
+            <p>Ci aiutano a capire come i visitatori utilizzano il sito (Google Analytics).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cookie Marketing -->
+      <div class="cookie-category">
+        <div class="category-header">
+          <label class="switch">
+            <input type="checkbox" id="cookie-marketing">
+            <span class="slider"></span>
+          </label>
+          <div>
+            <h4>📢 Cookie Marketing</h4>
+            <p>Utilizzati per mostrare pubblicità personalizzata.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cookie Preferenze -->
+      <div class="cookie-category">
+        <div class="category-header">
+          <label class="switch">
+            <input type="checkbox" id="cookie-preferences" checked>
+            <span class="slider"></span>
+          </label>
+          <div>
+            <h4>🎮 Cookie di Preferenze</h4>
+            <p>Salvano le tue preferenze (es. audio on/off, tema).</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button id="cookie-save-settings" class="cookie-btn btn-accept">
+        💾 SALVA IMPOSTAZIONI
+      </button>
+    </div>
+  </div>
+</div>
+
+<nav class="arcade-navbar" style="margin-top: 0;">
+  <div class="nav-logo">
+    <a href="index.html" class="logo-link">
+      <h1 class="nav-logo-text">RETRO ARENA</h1>
+    </a>
+  </div>
+
+  <ul class="nav-menu">
+    <li class="nav-item">
+      <a href="index.html">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-text">HOME</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="index.html#chi-siamo">
+        <span class="nav-icon">ℹ️</span>
+        <span class="nav-text">CHI SIAMO</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="index.html#gallery">
+        <span class="nav-icon">📸</span>
+        <span class="nav-text">GALLERY</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="index.html#game-mode">
+        <span class="nav-icon">🎮</span>
+        <span class="nav-text">GAME MODE</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="index.html#contatti">
+        <span class="nav-icon">📞</span>
+        <span class="nav-text">CONTATTI</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a href="lounge-bar.html">
+        <span class="nav-icon">🍹</span>
+        <span class="nav-text">LOUNGE BAR</span>
+      </a>
+    </li>
+    <li class="nav-item cta-button">
+      <a href="index.html#prenota">
+        <span class="nav-icon">⭐</span>
+        <span class="nav-text">PRENOTA ORA</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="hamburger">MENU</div>
+</nav>
+
+<section class="hero-menu">
+  <h1 class="bar-title-stroke">POWER-UP BAR</h1>
+  <p class="tagline">Cocktail Leggendari & Snack Epici</p>
+</section>
+
+<section class="full-menu">
+  <div class="menu-arcade-frame">
+
+    <!-- Tab stile gioco -->
+    <div class="menu-tabs">
+      <button class="tab active" data-tab="cocktails">🍸 COCKTAILS</button>
+      <button class="tab" data-tab="drinks">🥤 DRINKS</button>
+      <button class="tab" data-tab="snacks">🍿 SNACKS</button>
+    </div>
+
+    <!-- Contenuto Tab Cocktails -->
+    <div class="tab-content active" id="cocktails">
+      <div class="menu-grid">
+
+        <div class="drink-card level-legendary">
+          <div class="drink-header">
+            <h3>1-UP MOJITO</h3>
+            <span class="level-badge">LEGENDARY</span>
+          </div>
+          <div class="drink-img">🍃</div>
+          <p class="drink-desc">Rum bianco, lime, menta, soda. +1 Life garantito!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★★☆</span>
+            <span class="stat">😋 Taste: ★★★★★</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€7</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-epic">
+          <div class="drink-header">
+            <h3>POWER STAR SPRITZ</h3>
+            <span class="level-badge">EPIC</span>
+          </div>
+          <div class="drink-img">⭐</div>
+          <p class="drink-desc">Aperol, prosecco, soda. Invincibilità per 30 secondi!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★☆☆</span>
+            <span class="stat">😋 Taste: ★★★★☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€6</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-rare">
+          <div class="drink-header">
+            <h3>MEGA MANHATTAN</h3>
+            <span class="level-badge">RARE</span>
+          </div>
+          <div class="drink-img">🏙️</div>
+          <p class="drink-desc">Whisky, vermouth rosso, bitter. Energia massima!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★☆☆</span>
+            <span class="stat">😋 Taste: ★★★★☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€8</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-common">
+          <div class="drink-header">
+            <h3>PAC-MARGARITA</h3>
+            <span class="level-badge">COMMON</span>
+          </div>
+          <div class="drink-img">🌶️</div>
+          <p class="drink-desc">Tequila, lime, triple sec. Fresco e speziato!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★☆☆</span>
+            <span class="stat">😋 Taste: ★★★☆☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€6</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-epic">
+          <div class="drink-header">
+            <h3>SUPER MARIO MARTINI</h3>
+            <span class="level-badge">EPIC</span>
+          </div>
+          <div class="drink-img">🍄</div>
+          <p class="drink-desc">Vodka, limone, zucchero. Salto triplo assicurato!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★★☆</span>
+            <span class="stat">😋 Taste: ★★★★☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€7</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-rare">
+          <div class="drink-header">
+            <h3>FINAL FANTASY NEGRONI</h3>
+            <span class="level-badge">RARE</span>
+          </div>
+          <div class="drink-img">⚔️</div>
+          <p class="drink-desc">Gin, Campari, vermouth rosso. Per veri guerrieri!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★★☆</span>
+            <span class="stat">😋 Taste: ★★★☆☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€8</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Contenuto Tab Drinks -->
+    <div class="tab-content" id="drinks">
+      <div class="menu-grid">
+
+        <div class="drink-card level-common">
+          <div class="drink-header">
+            <h3>PIXEL PILSNER</h3>
+            <span class="level-badge">COMMON</span>
+          </div>
+          <div class="drink-img">🍺</div>
+          <p class="drink-desc">Birra chiara italiana. Rinfrescante e leggera.</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★☆☆☆</span>
+            <span class="stat">😋 Taste: ★★★☆☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€4</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-common">
+          <div class="drink-header">
+            <h3>RETRO COLA</h3>
+            <span class="level-badge">COMMON</span>
+          </div>
+          <div class="drink-img">🥤</div>
+          <p class="drink-desc">Cola tradizionale. Il classico intramontabile.</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★☆☆☆☆</span>
+            <span class="stat">😋 Taste: ★★★★☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€3</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-common">
+          <div class="drink-header">
+            <h3>ARCADE LEMONADE</h3>
+            <span class="level-badge">COMMON</span>
+          </div>
+          <div class="drink-img">🍋</div>
+          <p class="drink-desc">Limonata fresca fatta in casa. Energia istantanea!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★☆☆</span>
+            <span class="stat">😋 Taste: ★★★★★</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€3</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-common">
+          <div class="drink-header">
+            <h3>NERO ENERGY</h3>
+            <span class="level-badge">COMMON</span>
+          </div>
+          <div class="drink-img">⚡</div>
+          <p class="drink-desc">Caffè espresso italiano. Per sessioni extra lunghe!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★★★</span>
+            <span class="stat">😋 Taste: ★★★☆☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€2</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Contenuto Tab Snacks -->
+    <div class="tab-content" id="snacks">
+      <div class="menu-grid">
+
+        <div class="drink-card level-epic">
+          <div class="drink-header">
+            <h3>POWER PELLET POPCORN</h3>
+            <span class="level-badge">EPIC</span>
+          </div>
+          <div class="drink-img">🍿</div>
+          <p class="drink-desc">Popcorn al burro salato. Diventa invincibile!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★☆☆</span>
+            <span class="stat">😋 Taste: ★★★★★</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€4</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-rare">
+          <div class="drink-header">
+            <h3>MEGA MAN NACHOS</h3>
+            <span class="level-badge">RARE</span>
+          </div>
+          <div class="drink-img">🧀</div>
+          <p class="drink-desc">Nachos con formaggio fuso e jalapeños. Arma suprema!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★★☆</span>
+            <span class="stat">😋 Taste: ★★★★☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€6</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-common">
+          <div class="drink-header">
+            <h3>PAC-MAN PIZZA SLICES</h3>
+            <span class="level-badge">COMMON</span>
+          </div>
+          <div class="drink-img">🍕</div>
+          <p class="drink-desc">Fette di pizza margherita. Energia base per ogni giocatore.</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★☆☆</span>
+            <span class="stat">😋 Taste: ★★★★☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€5</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-legendary">
+          <div class="drink-header">
+            <h3>FINAL BOSS BURGER</h3>
+            <span class="level-badge">LEGENDARY</span>
+          </div>
+          <div class="drink-img">🍔</div>
+          <p class="drink-desc">Burger con bacon, cheddar e salsa speciale. Il boss finale!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★★★</span>
+            <span class="stat">😋 Taste: ★★★★★</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€10</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-common">
+          <div class="drink-header">
+            <h3>SPACE INVADER CHIPS</h3>
+            <span class="level-badge">COMMON</span>
+          </div>
+          <div class="drink-img">🍟</div>
+          <p class="drink-desc">Patatine fritte croccanti con ketchup. Arma secondaria perfetta.</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★☆☆☆</span>
+            <span class="stat">😋 Taste: ★★★★☆</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€3</span>
+          </div>
+        </div>
+
+        <div class="drink-card level-epic">
+          <div class="drink-header">
+            <h3>TETRIS DONUTS</h3>
+            <span class="level-badge">EPIC</span>
+          </div>
+          <div class="drink-img">🍩</div>
+          <p class="drink-desc">Donuts glassati con zuccheri colorati. Linea completa!</p>
+          <div class="drink-stats">
+            <span class="stat">💪 Power: ★★★☆☆</span>
+            <span class="stat">😋 Taste: ★★★★★</span>
+          </div>
+          <div class="drink-price">
+            <span class="price-coin">🪙</span>
+            <span class="price-amount">€4</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="arcade-footer">
+  <div class="footer-content">
+    <p class="game-over-text">THANKS FOR PLAYING!</p>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a> |
+      <a href="#contatti">Contatti</a> |
+      <a href="prenota.html">Prenota</a>
+    </div>
+    <p class="copyright">© 2026 RETRO ARENA - Via Pixel Arcade 90, Bari</p>
+    <p class="credits">MADE WITH ♥ IN PUGLIA</p>
+    <p class="developer">Developed By: <a href="https://portfolio-brown-two-67.vercel.app/" target="_blank" rel="noopener">Giuseppe La Selva</a></p>
+  </div>
+</footer>
+
+<!-- Toggle Audio Button - Fisso in basso a destra -->
+<button id="audio-toggle" class="audio-toggle" aria-label="Toggle suoni arcade">
+  🔊 SOUND ON
+</button>
+
+<script>
+// ============================================
+// SISTEMA AUDIO RETRO ARCADE
+// ============================================
+
+// Suoni online gratuiti già pronti
+const sounds = {
+  hover: new Audio('https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3'), // Beep UI
+  click: new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3'), // Click button
+  coin: new Audio('https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3'), // Coin arcade
+  select: new Audio('https://assets.mixkit.co/active_storage/sfx/2570/2570-preview.mp3'), // Menu select
+  success: new Audio('https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3') // Power up
+};
+
+// Volume basso per non disturbare
+Object.values(sounds).forEach(sound => {
+  sound.volume = 0.25;
+  sound.preload = 'auto';
+});
+
+// Stato audio
+let audioMuted = false;
+let audioEnabled = false;
+
+// Funzione play ottimizzata
+function playSound(soundName) {
+  if (audioMuted || !audioEnabled) return;
+
+  const sound = sounds[soundName];
+  if (!sound) return;
+
+  // Reset per permettere click rapidi
+  sound.currentTime = 0;
+  sound.play().catch(e => {
+    // Silenzioso se browser blocca
+    console.log('Audio autoplay blocked');
+  });
+}
+
+// ============================================
+// ABILITA AUDIO AL PRIMO CLICK
+// ============================================
+document.addEventListener('click', function enableAudio() {
+  if (!audioEnabled) {
+    // Sblocca audio context
+    Object.values(sounds).forEach(sound => {
+      sound.play().then(() => sound.pause()).catch(() => {});
+    });
+    audioEnabled = true;
+    console.log('🔊 Audio arcade abilitato!');
+  }
+}, { once: true });
+
+// ============================================
+// ACTIVE MENU STATE
+// ============================================
+document.addEventListener('DOMContentLoaded', () => {
+  // Evidenzia automaticamente la voce menu attiva
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const menuItems = document.querySelectorAll('.nav-item');
+  
+  menuItems.forEach(item => {
+    const link = item.querySelector('a');
+    const href = link.getAttribute('href');
+    
+    // Rimuovi classe active da tutti
+    item.classList.remove('active');
+    
+    // Aggiungi active alla pagina corrente
+    if (href === currentPage || 
+        (currentPage === '' && href === 'index.html') ||
+        (currentPage === 'index.html' && href === 'index.html')) {
+      item.classList.add('active');
+    }
+  });
+
+  // Link navbar
+  document.querySelectorAll('.nav-item a').forEach(link => {
+    link.addEventListener('mouseenter', () => playSound('hover'));
+    link.addEventListener('click', () => playSound('select'));
+  });
+
+  // ============================================
+  // TAB SYSTEM
+  // ============================================
+  const tabs = document.querySelectorAll('.tab');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      playSound('select');
+
+      // Rimuovi active da tutti
+      tabs.forEach(t => t.classList.remove('active'));
+      tabContents.forEach(tc => tc.classList.remove('active'));
+
+      // Aggiungi active al tab cliccato
+      tab.classList.add('active');
+      const targetTab = tab.getAttribute('data-tab');
+      document.getElementById(targetTab).classList.add('active');
+    });
+
+    tab.addEventListener('mouseenter', () => playSound('hover'));
+  });
+
+  // ============================================
+  // DRINK CARDS HOVER
+  // ============================================
+  document.querySelectorAll('.drink-card').forEach(card => {
+    card.addEventListener('mouseenter', () => playSound('hover'));
+    card.addEventListener('click', () => playSound('coin'));
+  });
+
+  // ============================================
+  // HAMBURGER MENU MOBILE
+  // ============================================
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      playSound('select');
+      navMenu.classList.toggle('active');
+      hamburger.textContent = navMenu.classList.contains('active') ? 'CLOSE' : 'MENU';
+    });
+  }
+
+  // ============================================
+  // TOGGLE AUDIO BUTTON
+  // ============================================
+  const audioToggle = document.getElementById('audio-toggle');
+  if (audioToggle) {
+    audioToggle.addEventListener('click', () => {
+      audioMuted = !audioMuted;
+      audioToggle.innerHTML = audioMuted ? '🔇 SOUND OFF' : '🔊 SOUND ON';
+      audioToggle.classList.toggle('muted');
+
+      // Play sound se unmute
+      if (!audioMuted) playSound('select');
+    });
+  }
+
+  // ============================================
+  // SCROLL REVEAL + SOUND
+  // ============================================
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+        // Piccolo beep quando card appare
+        setTimeout(() => playSound('hover'), 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.drink-card').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+
+});
+
+// ============================================
+// COOKIE BANNER MANAGEMENT
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cookieBanner = document.getElementById('cookie-banner');
+  const cookieModal = document.getElementById('cookie-modal');
+  const acceptAllBtn = document.getElementById('cookie-accept-all');
+  const acceptNecessaryBtn = document.getElementById('cookie-accept-necessary');
+  const settingsBtn = document.getElementById('cookie-settings');
+  const modalClose = document.getElementById('modal-close');
+  const saveSettingsBtn = document.getElementById('cookie-save-settings');
+
+  // Controlla se l'utente ha già accettato
+  const cookieConsent = localStorage.getItem('cookieConsent');
+
+  if (!cookieConsent) {
+    // Mostra banner dopo 1 secondo
+    setTimeout(() => {
+      cookieBanner.classList.remove('hidden');
+      playSound('hover'); // Suono arcade
+    }, 1000);
+  } else {
+    // Carica preferenze salvate
+    loadCookiePreferences(JSON.parse(cookieConsent));
+  }
+
+  // ============================================
+  // ACCETTA TUTTI I COOKIE
+  // ============================================
+  acceptAllBtn?.addEventListener('click', () => {
+    const consent = {
+      necessary: true,
+      analytics: true,
+      marketing: true,
+      preferences: true,
+      timestamp: new Date().toISOString()
+    };
+
+    saveCookieConsent(consent);
+    cookieBanner.classList.add('hidden');
+    playSound('success');
+    loadCookiePreferences(consent);
+  });
+
+  // ============================================
+  // SOLO COOKIE NECESSARI
+  // ============================================
+  acceptNecessaryBtn?.addEventListener('click', () => {
+    const consent = {
+      necessary: true,
+      analytics: false,
+      marketing: false,
+      preferences: false,
+      timestamp: new Date().toISOString()
+    };
+
+    saveCookieConsent(consent);
+    cookieBanner.classList.add('hidden');
+    playSound('select');
+    loadCookiePreferences(consent);
+  });
+
+  // ============================================
+  // APRI MODAL IMPOSTAZIONI
+  // ============================================
+  settingsBtn?.addEventListener('click', () => {
+    cookieBanner.classList.add('hidden');
+    cookieModal.classList.remove('hidden');
+    playSound('select');
+  });
+
+  // ============================================
+  // CHIUDI MODAL
+  // ============================================
+  modalClose?.addEventListener('click', () => {
+    cookieModal.classList.add('hidden');
+    cookieBanner.classList.remove('hidden');
+    playSound('click');
+  });
+
+  // ============================================
+  // SALVA IMPOSTAZIONI PERSONALIZZATE
+  // ============================================
+  saveSettingsBtn?.addEventListener('click', () => {
+    const consent = {
+      necessary: true,
+      analytics: document.getElementById('cookie-analytics')?.checked || false,
+      marketing: document.getElementById('cookie-marketing')?.checked || false,
+      preferences: document.getElementById('cookie-preferences')?.checked || false,
+      timestamp: new Date().toISOString()
+    };
+
+    saveCookieConsent(consent);
+    cookieModal.classList.add('hidden');
+    playSound('success');
+    loadCookiePreferences(consent);
+  });
+
+  // ============================================
+  // FUNZIONI HELPER
+  // ============================================
+
+  function saveCookieConsent(consent) {
+    localStorage.setItem('cookieConsent', JSON.stringify(consent));
+    console.log('✅ Cookie consent salvato:', consent);
+  }
+
+  function loadCookiePreferences(consent) {
+    // Carica Google Analytics se accettato
+    if (consent.analytics) {
+      loadGoogleAnalytics();
+    }
+
+    // Carica script marketing se accettati
+    if (consent.marketing) {
+      loadMarketingScripts();
+    }
+
+    // Applica preferenze utente
+    if (consent.preferences) {
+      // Audio, tema, etc già salvati in localStorage
+    }
+  }
+
+  function loadGoogleAnalytics() {
+    // Inserisci qui il tuo Google Analytics ID
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
+    // gtag('js', new Date());
+    // gtag('config', 'GA_MEASUREMENT_ID');
+    console.log('📊 Google Analytics caricato');
+  }
+
+  function loadMarketingScripts() {
+    // Inserisci script marketing/pixel Facebook, etc
+    console.log('📢 Marketing scripts caricati');
+  }
+
+});
+
+// ============================================
+// EASTER EGG: Konami Code
+// ============================================
+let konamiCode = [];
+const konamiSequence = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+
+document.addEventListener('keydown', (e) => {
+  konamiCode.push(e.keyCode);
+  konamiCode = konamiSequence.join(',');
+
+  if (konamiCode.join(',') === konamiSequence.join(',')) {
+    playSound('success');
+    document.body.style.animation = 'rainbow 2s infinite';
+    alert('🎮 CHEAT CODE ACTIVATED! Free drink unlocked!');
+    setTimeout(() => {
+      document.body.style.animation = 'none';
+    }, 5000);
+  }
+});
+</script>
+
+<script>
+// ============================================
+// FILTRI MENU LOUNGE BAR
+// ============================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const targetTab = this.getAttribute('data-tab');
+
+      // Rimuovi active da tutti
+      tabs.forEach(t => t.classList.remove('active'));
+      tabContents.forEach(tc => tc.classList.remove('active'));
+
+      // Aggiungi active al selezionato
+      this.classList.add('active');
+      document.getElementById(targetTab)?.classList.add('active');
+
+      // Suono arcade
+      playSound('select');
+    });
+  });
+});
+</script>
+</body>
+</html>
