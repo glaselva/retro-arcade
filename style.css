@@ -12,6 +12,7 @@ body {
   font-family: inherit;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* previene scroll orizzontale */
 }
 
 
@@ -1009,18 +1010,60 @@ body {
 .services-grid {
   background: linear-gradient(
     180deg,
-    #1A1A1A 0%,           /* Nero in alto */
+    #1A1A1A 0%,
     #3E3E3E 30%,
     #5A5A5A 50%,
-    #7E8491 70%,          /* Parte da qui */
+    #7E8491 70%,
     #8A8E9C 85%,
-    #9299A9 100%          /* Grigio navbar in fondo */
+    #9299A9 100%
   );
   padding: 60px 20px;
   border-bottom: 8px solid #9299A9;
   border-top: 8px solid #9299A9;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box; /* ✅ AGGIUNGI */
+  width: 100%; /* ✅ AGGIUNGI */
+}
+
+/* ✅ AGGIUNGI QUESTA MEDIA QUERY PER MOBILE */
+@media (max-width: 480px) {
+  .services-grid {
+    padding: 40px 10px; /* riduci padding laterale */
+    border-bottom: 4px solid #9299A9; /* bordi più sottili */
+    border-top: 4px solid #9299A9;
+  }
+  
+  .section-header {
+    margin-bottom: 30px; /* riduci spazio */
+  }
+  
+  .grid-container {
+    padding: 0 5px; /* minimo padding */
+  }
+  
+  .service-card {
+    padding: 20px 15px;
+    border: 3px solid #2E2E2E; /* bordo più sottile */
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.8), 0 0 10px rgba(107, 228, 223, 0.2);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.9), 0 0 20px rgba(107, 228, 223, 0.5);
+  }
+  
+  .card-icon {
+    font-size: 2rem; /* riduci icone */
+  }
+  
+  .card-text {
+    font-size: 14px;
+  }
+  
+  .card-price {
+    font-size: 16px;
+  }
 }
 
 /* Stelle pixel animate sul gradient */
@@ -1135,15 +1178,81 @@ body {
   margin: 0 auto;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* aggiungi padding laterale */
+}
+
+.grid-container {
+  box-sizing: border-box; /* importante! */
+  width: 100%; /* invece di max-width solo */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonne */
+    gap: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 colonna */
+    gap: 15px;
+    padding: 0 10px;
+  }
+}
+
+/* Mobile molto piccoli (iPhone SE, ecc.) */
+@media (max-width: 375px) {
+  .grid-container {
+    gap: 10px;
+  }
+}
+
 .service-card {
   border: 6px solid #2E2E2E;
   padding: 30px 20px;
   text-align: center;
   box-shadow:
     8px 8px 0 rgba(0,0,0,0.8),
-    0 0 15px rgba(107, 228, 223, 0.2); /* ✅ Glow leggero */
+    0 0 15px rgba(107, 228, 223, 0.2);
   position: relative;
   transition: all 0.3s;
+  box-sizing: border-box; /* ✅ AGGIUNGI QUESTO */
+  max-width: 100%; /* ✅ AGGIUNGI QUESTO */
+}
+
+/* ✅ AGGIUNGI QUESTA MEDIA QUERY */
+@media (max-width: 480px) {
+  .service-card {
+    padding: 20px 15px; /* riduci padding */
+    border: 4px solid #2E2E2E; /* bordo più sottile */
+    box-shadow:
+      4px 4px 0 rgba(0,0,0,0.8), /* ombra ridotta */
+      0 0 10px rgba(107, 228, 223, 0.2);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px); /* movimento ridotto */
+    box-shadow:
+      6px 6px 0 rgba(0,0,0,0.9), /* ombra ridotta */
+      0 0 20px rgba(107, 228, 223, 0.5);
+  }
+  
+  .card-text {
+    font-size: 14px; /* riduci testo se necessario */
+  }
+  
+  .card-icon {
+    font-size: 2.5rem; /* riduci icone se troppo grandi */
+  }
 }
 
 .service-card:nth-child(1) {
@@ -3224,5 +3333,25 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  /* Fix universale per tutte le sezioni */
+  section, .services-grid, .grid-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Fix card */
+  .service-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 }
