@@ -1256,6 +1256,47 @@ document.addEventListener('keydown', (e) => {
     }, 5000);
   }
 });
+
+
     </script>
+
+  <script>
+// Scroll Spy per navbar attiva
+window.addEventListener('scroll', function() {
+  let scrollPosition = window.scrollY + 200; // offset per navbar fissa
+  
+  // Seleziona tutte le sezioni con id
+  const sections = document.querySelectorAll('section[id]');
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute('id');
+    
+    // Controlla se la sezione è visibile
+    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+      // Rimuovi active da tutti i nav-item
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Aggiungi active al nav-item corrispondente
+      const activeLink = document.querySelector(`.nav-item a[href*="#${sectionId}"]`);
+      if (activeLink) {
+        activeLink.parentElement.classList.add('active');
+      }
+    }
+  });
+  
+  // Gestione speciale per HOME (quando sei in cima)
+  if (window.scrollY < 300) {
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    document.querySelector('.nav-item a[href="index.html"]').parentElement.classList.add('active');
+  }
+});
+</script>
+
 </body>
 </html>
